@@ -1,0 +1,47 @@
+.. _Custom Katib Resource Definitions:
+
+Modify the Katib Controller Deployment's Arguments
+=====================================================
+
+You need to modify the arguments of the Katib controller deployment. Here's an example of how you can do it:
+
+.. code-block:: yaml
+
+   containers:
+     - name: katib-controller
+       image: docker.io/kubeflowkatib/katib-controller
+       command: ["./katib-controller"]
+       args:
+         - "--webhook-port=8443"
+         - "--trial-resources=Job.v1.batch"
+         - "--trial-resources=TFJob.v1.kubeflow.org"
+         - "--trial-resources=PyTorchJob.v1.kubeflow.org"
+         - "--trial-resources=MPIJob.v1.kubeflow.org"
+         - "--trial-resources=PipelineRun.v1beta1.tekton.dev"
+
+Modify the Katib Controller ClusterRole's Rules
+------------------------------------------------
+
+Next, you need to modify the rules of the Katib controller ClusterRole to give Katib access to all Kubernetes resources that are created by the CRD's controller. Here's an example:
+
+.. code-block:: yaml
+
+   kind: ClusterRole
+   apiVersion: rbac.authorization.k8s.io/v1
+   metadata:
+     name: katib-controller
+   rules:
+     - apiGroups:
+         - tekton.dev
+       resources:
+         - pipelineruns
+         - taskruns
+       verbs:
+         - "*"
+     - apiGroups:
+         - kubeflow.org
+       resources:
+         - tfjobs
+         - pytorchjobs
+         - mpijobs
+       verbs:

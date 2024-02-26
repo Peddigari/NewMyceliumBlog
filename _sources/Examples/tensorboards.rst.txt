@@ -1,0 +1,110 @@
+Visualize Train and Test Results
+==============================================================
+
+This tutorial will guide you through the process of using TensorBoard, a suite of visualization tools provided by TensorFlow, with PyTorch.
+
+Install Necessary Libraries
+---------------------------
+
+First, you need to install PyTorch and TensorBoard. You can do this using pip:
+
+.. code-block:: bash
+
+   pip install torch torchvision torchaudio tensorboard
+
+Import Libraries and Prepare Data
+---------------------------------
+
+Next, import the necessary libraries and prepare your data for training.
+
+.. code-block:: python
+
+   import torch
+   import torchvision
+   from torch.utils.tensorboard import SummaryWriter
+   from torchvision import datasets, transforms
+
+   # Transform the data
+   transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
+
+   # Download and load the training data
+   trainset = datasets.MNIST('~/.pytorch/MNIST_data/', download=True, train=True, transform=transform)
+   trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle=True)
+
+Define Your Model
+-----------------
+
+Define your model using PyTorch. Here's an example of a simple feedforward network:
+
+.. code-block:: python
+
+   from torch import nn
+
+   # Define the network architecture
+   model = nn.Sequential(nn.Linear(784, 128),
+                         nn.ReLU(),
+                         nn.Linear(128, 64),
+                         nn.ReLU(),
+                         nn.Linear(64, 10),
+                         nn.LogSoftmax(dim=1))
+
+Train Your Model and Log Data
+-----------------------------
+
+Train your model and log necessary data for visualization. This typically includes loss and accuracy.
+
+.. code-block:: python
+
+   from torch import optim
+
+   # Define the loss and optimizer
+   criterion = nn.NLLLoss()
+   optimizer = optim.SGD(model.parameters(), lr=0.003)
+
+   # Create a SummaryWriter
+   writer = SummaryWriter()
+
+   dataiter = iter(trainloader)
+   images, labels = dataiter.next()
+
+   # Train the network
+   for epoch in range(5):
+       running_loss = 0
+       for images, labels in trainloader:
+           # Flatten images into a 784 long vector
+           images = images.view(images.shape[0], -1)
+       
+           # Training pass
+           optimizer.zero_grad()
+           
+           output = model(images)
+           loss = criterion(output, labels)
+           
+           # Backward pass
+           loss.backward()
+           
+           # Optimize the weights
+           optimizer.step()
+           
+           running_loss += loss.item()
+       else:
+           print(f"Training loss: {running_loss/len(trainloader)}")
+           
+       # Add scalar data to TensorBoard
+       writer.add_scalar("Loss/train", running_loss, epoch)
+
+   # Close the SummaryWriter
+   writer.close()
+
+Start TensorBoard
+-----------------
+
+Once you have logged data from your model training, you can start TensorBoard:
+
+.. code-block:: bash
+
+   tensorboard --logdir=runs
+
+Now you can access TensorBoard at `localhost:6006` in your web browser.
+
+That's it! You've now used TensorBoard with PyTorch for visualizing your model's performance. Please note that this is a basic tutorial and the exact steps may vary depending on your specific setup and requirements. Always ensure to follow best practices and guidelines when configuring your system.

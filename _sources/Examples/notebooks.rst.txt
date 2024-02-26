@@ -1,0 +1,68 @@
+.. _Create a Notebook:
+
+
+Create a Kubeflow Notebook
+=========================================
+
+Kubeflow offers web-based development environments in Kubernetes clusters called a notebook (Don’t use Visual Studio Code). These are the following steps to get a notebook setup in Kubeflow
+
+**Step 1.** Open the Kubeflow Central Dashboard in your browser.
+
+**Step 2.** Click “Notebooks” in the left-hand panel.
+
+**Step 3.** Click “New Server” to create a new notebook server.
+
+**Step 4.** Specify the configs for your notebook server (96 cores, 128GiB, 2GPU NVidia)
+
+.. note:: 
+
+   - container images are shown in Appendix A
+   - Some libraries like PyTorch use shared memory for multiprocessing. 
+   - Currently, Kubernetes doesn’t support shared memory activation. As a workaround, Kubeflow mounts an empty directory volume at /dev/shm.
+   - Administrators can provide standard notebook images with pre-installed packages (because Kubeflow’s RBAC enables easy notebook sharing across the organization.
+
+**Step 5.** Click “CONNECT” once the notebook has been provisioned (can take a few minutes)
+
+
+Coding a Notebook Model
+----------------------------
+
+**Step 1.** Use PyTorch to create your machine learning model. Here's an example of how to create a simple linear regression model in PyTorch.
+
+.. code-block:: python
+
+   import torch, torchvision, torchaudio
+
+   # Define model
+   model = torch.nn.Linear(1, 1)
+
+   # Define loss function
+   loss_fn = torch.nn.MSELoss(reduction='sum')
+
+   # Define optimizer
+   optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+
+**Step 2.** Train Your Model
+
+**Step 3.** Finally, you can train your model using your large dataset. Make sure to use the persistent volumes created by Longhorn and NFS to store and access your data.
+
+Here's an example of how to train your model.
+
+.. code-block:: python
+
+   # Train the model
+   for epoch in range(100).
+       # Forward pass
+       y_pred = model(x)
+
+       # Compute loss
+       loss = loss_fn(y_pred, y)
+
+       # Zero gradients, perform a backward pass, and update the weights.
+       optimizer.zero_grad()
+       loss.backward()
+       optimizer.step()
+
+That's it! You've now built a Jupyter notebook machine learning program
+
+You are ready to use AutoML for hyperparameter optimization at scale with a large language model and massive amount of data. Please note that this is a basic tutorial and the exact steps may vary depending on your specific setup and requirements. Always ensure to follow best practices and guidelines when configuring your system.

@@ -1,0 +1,39 @@
+.. _Cap:
+
+Cap.py
+=======================
+
+**Table 1.** :func:`Cap` Methods
+
+.. list-table::
+   :header-rows: 1
+
+   * - Method
+     - Description
+
+   * - :func:`preview_heirarchy`
+     - Shows a preview of the HTML hierarchy of a web page given its URL, which displays the structure and the nesting of the HTML elements
+   * - :func:`prettyify_html`
+     - Shows a preview of the HTML hierarchy of a web page given its URL, which displays the structure and the nesting of the HTML elements
+   * - :func:`display_html`
+     - Displays the HTML content of a web page given its URL in a browser window, which renders the visual appearance and the interactivity of the page
+
+
+**Table 2.** :func:`PageBuilder` Methods
+
+
+.. list-table::
+   :header-rows: 1
+
+   * - Method
+     - Description
+   * - :func:`create_trie_from_pages`
+     - Displays the HTML content of a web page given its URL in a browser window, which renders the visual appearance and the interactivity of the page
+   * - :func:`create_subtree_from_page`
+     - Creates and returns a trie data structure from a list of web pages given their URLs, which stores the common prefixes and the differences of the HTML content of the pages
+   * - :func:`create_dataset_from_pages`
+     - Creates and returns a dataset of web pages given a list of URLs and a list of features, which extracts and stores the values of the features from the HTML content of the pages
+
+
+.. automodule:: Cap
+   :members:

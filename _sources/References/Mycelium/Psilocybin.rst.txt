@@ -1,0 +1,94 @@
+.. _Psilocybin:
+
+Psilocybin.py
+=======================
+
+
+A class of variational autoencoders (VAEs) that can be used to generate images. It is based of the concept of using
+VAE, LDM, CDM, and EDM to generate images. This class uses SDXL model which already has all of the key components.
+This class operates under the following rules.
+
+.. image:: ../../../assets/diagram-psilocybin.jpg
+
+
+.. danger::
+
+	.. rubric:: Rules
+ 
+	1. the way that I want, will not likely be compatible with existing models
+	2. turn-off and turn-on components of model
+	3. explainable requires access to weights
+	4. data is managed in the DB class
+
+Stages:
+
+1. Variational Autoencoder (VAE): Utilize a Variational Autoencoder (VAE) to generate images. Options include Clip or Flatiron.
+2. Latent Diffusion Models (LDMs): Employ Latent Diffusion Models for image generation. Available models are SDXL, Stable Diffusion 2.1 (SD-2.1), Flatiron, Pinhole, and Pixar.alpha.
+3. Control Diffusion Models (CDMs): Use Control Diffusion Models to generate images. Options are ControlNet, Control-LoRA, Flatiron, Pinhole, and Pixar.alpha.
+4. Explainable Diffusion Models (EDMs): Implement Explainable Diffusion Models for image generation. Available models include SDXL, Stable Diffusion 2.1 (SD-2.1), Flatiron, Pinhole, and Pixar.alpha.
+
+
+OVERVIEW
+----------------------------------
+
+**Table 1:** :func:`PsilocybinClass` Methods - A generic class used for interacting with the model.
+
+.. list-table::
+	:header-rows: 1
+	
+	* - Method
+	  - Description
+	* - :func:`PsilocybinClass.embed`
+	  - Embeds an image.
+	* - :func:`PsilocybinClass.fit`
+	  - Train the model.
+	* - :func:`PsilocybinClass.load_data`
+	  - Looad the data
+	* - :func:`PsilocybinClass.save`
+	  - Saves the model.
+
+**Table 2:** :func:`DataLoaderClass` Methods - A class of data loading, storing, and embedding
+		
+.. list-table::
+	:header-rows: 1
+
+	* - Method
+	  - Description
+	* - :func:`DataLoaderClass.load_data`
+	  - Looad the data
+	* - :func:`DataLoaderClass.store_embeddings`
+	  - Stores the embeddings (likely through chunks)
+
+**Table 3:** :func:`UNet` Methods - A class of cv-model chunking
+		
+.. list-table::
+	:header-rows: 1
+
+	* - Method
+	  - Description
+	* - :func:`UNet.load`
+	  - Initializes the model from the following (sdxl, sd2.1, flatiron, pinhole, pixar.alpha)
+	* - :func:`UNet.predict`
+	  - Predicts the model.
+	* - :func:`UNet.forward`
+	  - Scores the model.
+	* - :func:`UNet.save`
+	  - Saves the model.      
+		
+		
+**Table 4:** :func:`Endpoints` Methods
+
+.. list-table::
+	:header-rows: 1
+
+	* - Method
+	  - Description
+	* - :func:`Endpoints.nlp_embed_chunk`
+	  - Embeds a chunk.   
+
+REFERENCES
+----------------------------------
+
+
+.. automodule:: Psilocybin
+   :members:

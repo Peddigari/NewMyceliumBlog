@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+  <!-- <link rel="icon" href="assets/images/favicon.png"> -->
+  <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
+
+
+
+  <title>1. Statement of Purpose &#8212; MYCELIUM documentation</title>
+
+
+
+  <link rel="stylesheet" href="assets/stylesheets/main.8c5ef100.min.css">
+
+
+  <link rel="stylesheet" href="assets/stylesheets/palette.9647289d.min.css">
+
+
+
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+  <style>
+    :root {
+      --md-text-font: "Poppins";
+      --md-code-font: "Roboto Mono"
+    }
+  </style>
+
+
+
+  <link rel="stylesheet" href="assets/_mkdocstrings.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>__md_scope = new URL(".", location), __md_get = (e, _ = localStorage, t = __md_scope) => JSON.parse(_.getItem(t.pathname + "." + e)), __md_set = (e, _, t = localStorage, a = __md_scope) => { try { t.setItem(a.pathname + "." + e, JSON.stringify(_)) } catch (e) { } }</script>
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="">
+
+
+
+  <script>var palette = __md_get("__palette"); if (palette && "object" == typeof palette.color) for (var key of Object.keys(palette.color)) document.body.setAttribute("data-md-color-" + key, palette.color[key])</script>
+
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+  <label class="md-overlay" for="__drawer"></label>
+  <div data-md-component="skip">
+
+
+    <a href="#quickstart" class="md-skip">
+      Skip to content
+    </a>
+
+  </div>
+  <div data-md-component="announce">
+
+  </div>
+
+  <div data-md-component="outdated" hidden>
+    <aside class="md-banner md-banner--warning">
+
+    </aside>
+  </div>
+
+
+
+
+  <header class="md-header" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="Header">
+      <a href="." title="VAI-UTILS" class="md-header__button md-logo" aria-label="VAI-UTILS" data-md-component="logo">
+
+        <img src="./assets/images/favicon.ico" alt="logo">
+
+      </a>
+      <label class="md-header__button md-icon" for="__drawer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
+        </svg>
+      </label>
+      <div class="md-header__title" data-md-component="header-title">
+        <div class="md-header__ellipsis">
+          <div class="md-header__topic">
+            <span class="md-ellipsis">
+              MYCELIUM
+            </span>
+          </div>
+          <div class="md-header__topic" data-md-component="header-topic">
+            <span class="md-ellipsis">
+
+              1. Quickstart
+
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <form class="md-header__option" data-md-component="palette">
+
+
+
+        <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white"
+          data-md-color-accent="" aria-label="" type="radio" name="__palette" id="__palette_1">
+
+        <label class="md-header__button md-icon" title="" for="__palette_2" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z" />
+          </svg>
+        </label>
+
+
+
+
+        <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom"
+          data-md-color-accent="" aria-label="" type="radio" name="__palette" id="__palette_2">
+
+        <label class="md-header__button md-icon" title="" for="__palette_1" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z" />
+          </svg>
+        </label>
+
+
+      </form>
+
+
+
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z" />
+        </svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+        <label class="md-search__overlay" for="__search"></label>
+        <div class="md-search__inner" role="search">
+          <form class="md-search__form" name="search">
+            <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search"
+              autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"
+              data-md-component="search-query" required>
+            <label class="md-search__icon md-icon" for="__search">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z" />
+              </svg>
+            </label>
+            <nav class="md-search__options" aria-label="Search">
+
+              <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z" />
+                </svg>
+              </button>
+            </nav>
+
+          </form>
+          <div class="md-search__output">
+            <div class="md-search__scrollwrap" data-md-scrollfix>
+              <div class="md-search-result" data-md-component="search-result">
+                <div class="md-search-result__meta">
+                  Initializing search
+                </div>
+                <ol class="md-search-result__list"></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </nav>
+
+  </header>
+
+  <div class="md-container" data-md-component="container">
+
+
+
+
+
+    <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+      <div class="md-tabs__inner md-grid">
+        <!--<ul class="md-tabs__list">
+    <li class="md-tabs__item">
+      <a href="purpose.html" class="md-tabs__link md-tabs__link--active">
+        GUIDE
+      </a>
+    </li>
+
+  
+  
+    <li class="md-tabs__item">
+      <a href="python-guide.html" class="md-tabs__link">
+        Python API
+      </a>
+    </li>
+  
+
+      
+    </ul>-->
+      </div>
+    </nav>
+
+
+
+    <main class="md-main" data-md-component="main">
+      <div class="md-main__inner md-grid">
+
+
+
+        <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+          <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+              <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+                <label class="md-nav__title" for="__drawer">
+                  <a href="." title="VAI-UTILS" class="md-nav__button md-logo" aria-label="VAI-UTILS"
+                    data-md-component="logo">
+                    <img src="./assets/images/favicon.ico" alt="logo">
+                  </a>
+                  VAI-UTILS
+                </label>
+                <ul class="md-nav__list" data-md-scrollfix>
+   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+                    <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1"
+                      checked>
+                      <label class="md-nav__link" for="__nav_1">
+                     
+                     
+
+
+                     
+                     <a href="../mycelium/index.html" title="MYCELIUM documentation"
+                       >MYCELIUM</a
+                     >
+                     </label>
+                    <nav class="md-nav" aria-label="MYCELIUM" data-md-level="1">
+                      <label class="md-nav__title" for="__nav_1">
+                        <span class="md-nav__icon md-icon"></span>
+                        MYCELIUM
+                      </label>
+                      <ul class="md-nav__list" data-md-scrollfix>
+                        <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+
+                          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox"
+                            id="__nav_1_1" checked>
+
+
+
+
+                          <label class="md-nav__link" for="__nav_1_1">
+                            INTRODUCTION
+                            <span class="md-nav__icon md-icon"></span>
+                          </label>
+
+                          <nav class="md-nav" aria-label="INTRODUCTION" data-md-level="2">
+                            <label class="md-nav__title" for="__nav_1_1">
+                              <span class="md-nav__icon md-icon"></span>
+                              INTRODUCTION
+                            </label>
+                            <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+
+                              <li class="md-nav__item md-nav__item--active">
+
+                                <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+
+                                <a href="purpose.html" class="md-nav__link">
+                                  1. Statement of Purpose
+                                </a>
+
+                              </li>
+
+
+
+
+
+
+
+
+
+                              <li class="md-nav__item">
+                                <a href="Guidelines.html" class="md-nav__link">
+                                  2. Rules and Procedure
+                                </a>
+                              </li>
+
+
+
+
+
+
+
+
+
+                              <li class="md-nav__item">
+                                <a href="chain-of-command.html" class="md-nav__link">
+                                  3. Chain of Command
+                                </a>
+                              </li>
+
+
+
+
+                            </ul>
+                          </nav>
+                        </li>
+                        <li class="md-nav__item md-nav__item--nested">
+                          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2"
+                            data-md-state="indeterminate" type="checkbox" id="__nav_1_2" checked>
+                          <label class="md-nav__link" for="__nav_1_2">
+                            GUIDE
+                            <span class="md-nav__icon md-icon"></span>
+                          </label>
+                          <nav class="md-nav" aria-label="GUIDE" data-md-level="2">
+                            <label class="md-nav__title" for="__nav_1_2">
+                              <span class="md-nav__icon md-icon"></span>
+                              GUIDE
+                            </label>
+                            <ul class="md-nav__list" data-md-scrollfix>
+                              <li class="md-nav__item">
+                                <a href="ci-cd.html" class="md-nav__link">
+                                  1. CI-CD Procedures
+                                </a>
+                              </li>
+                              <li class="md-nav__item">
+                                <a href="kubeflow.html" class="md-nav__link">
+                                  2. Getting STarted with Kubeflow
+                                </a>
+                              </li>
+         <li class="md-nav__item">
+                                <a href="dashboard.html" class="md-nav__link">
+                                  3. Platform Induction Tutorial
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </li>
+                        <li class="md-nav__item md-nav__item--nested">
+                          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3"
+                            data-md-state="indeterminate" type="checkbox" id="__nav_1_3" checked>
+                          <label class="md-nav__link" for="__nav_1_3">
+                            EXAMPLES
+                            <span class="md-nav__icon md-icon"></span>
+                          </label>
+                          <nav class="md-nav" aria-label="EXAMPLES" data-md-level="2">
+                            <label class="md-nav__title" for="__nav_1_3">
+                              <span class="md-nav__icon md-icon"></span>
+                              EXAMPLES
+                            </label>
+                            <ul class="md-nav__list" data-md-scrollfix>
+                            <li class="md-nav__item">
+                         <a href="notebooks.html" class="md-nav__link">
+                                  1. Create a Kubeflow Notebook
+                                </a>
+                              </li>
+                              <li class="md-nav__item">
+                                <a href="katib.html" class="md-nav__link">
+                                  2. Optimize Parameters
+                                </a>
+                              </li>
+                              <li class="md-nav__item">
+                                <a href="tensorboards.html" class="md-nav__link">
+                                  3. Visualize Train and Test Results
+                                </a>
+                              </li>
+                              <li class="md-nav__item">
+                                <a href="tensorboards.html" class="md-nav__link">
+                                  4. Plotting
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </li>
+                        <li class="md-nav__item md-nav__item--nested">
+                          <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4"
+                            data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
+                          <label class="md-nav__link" for="__nav_1_4">
+                            REFERENCES
+                            <span class="md-nav__icon md-icon"></span>
+                          </label>
+                          <nav class="md-nav" aria-label="REFERENCES" data-md-level="2">
+                            <label class="md-nav__title" for="__nav_1_4">
+                              <span class="md-nav__icon md-icon"></span>
+                              REFERENCES
+                            </label>
+                            <ul class="md-nav__list" data-md-scrollfix>
+                              <li class="md-nav__item">
+                                <a href="example-hyperopt.html" class="md-nav__link">
+                                  1. Mycelium.py
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+                        </li>
+                        <li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4"
+  data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
+<label class="md-nav__link" for="__nav_1_4">
+  DATABASES
+  <span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav" aria-label="DATABASES" data-md-level="2">
+  <label class="md-nav__title" for="__nav_1_4">
+    <span class="md-nav__icon md-icon"></span>
+    DATABASES
+  </label>
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+    <li class="md-nav__item">
+      <a href="example-hyperopt.html" class="md-nav__link">
+        1. Inchworm.py
+      </a>
+    </li>
+    <li class="md-nav__item">
+      <a href="example-hyperopt.html" class="md-nav__link">
+        2. Tree.py
+      </a>
+    </li>
+    <li class="md-nav__item">
+      <a href="example-hyperopt.html" class="md-nav__link">
+        3. Branch.py
+      </a>
+    </li>
+    <li class="md-nav__item">
+      <a href="example-hyperopt.html" class="md-nav__link">
+        4. Crawler.py
+      </a>
+    </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox"
+  id="__nav_1_1" checked>
+<label class="md-nav__link" for="__nav_1_1">
+  MODELS
+  <span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav" aria-label="MODELS" data-md-level="2">
+  <label class="md-nav__title" for="__nav_1_1">
+    <span class="md-nav__icon md-icon"></span>
+    MODELS
+  </label>
+  <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--active">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <a href="purpose.html" class="md-nav__link">
+        1. Hyphae.py
+      </a>
+    </li>
+    <li class="md-nav__item">
+      <a href="Guidelines.html" class="md-nav__link">
+        2. LLama.py
+      </a>
+    </li>
+    <li class="md-nav__item">
+      <a href="chain-of-command.html" class="md-nav__link">
+        3. Psilocybin.py
+      </a>
+    </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_1" type="checkbox"
+  id="__nav_1_1" checked>
+<label class="md-nav__link" for="__nav_1_1">
+  ANALYTICS
+  <span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav" aria-label="ANALYTICS" data-md-level="2">
+  <label class="md-nav__title" for="__nav_1_1">
+    <span class="md-nav__icon md-icon"></span>
+    ANALYTICS
+  </label>
+  <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--active">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <a href="Plot.html" class="md-nav__link md-nav__link--active">
+        1. Plot.py
+      </a>
+    </li>
+    <li class="md-nav__item">
+      <a href="Cap.html" class="md-nav__link">
+        2. Cap.py
+      </a>
+    </li>
+</ul>
+</nav>
+</li>
+</li>
+
+
+
+
+                      </ul>
+                    </nav>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+          <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+
+
+              <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+  <label class="md-nav__title" for="__toc">
+    <span class="md-nav__icon md-icon"></span>
+    Table of contents
+  </label>
+  <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
+      <li class="md-nav__item">
+<a href="#Plot" class="md-nav__link">
+  Plot.py
+</a>
+
+</li>
+    
+    
+
+
+
+<li class="md-nav__item">
+<a href="../mycelium/_sources/References/Mycelium/Plot.rst.txt" class="md-nav__link">
+Show Source
+</a>
+
+</li>
+    
+  </ul>
+
+</nav>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="md-content" data-md-component="content">
+          <article class="md-content__inner md-typeset">
+
+
+
+
+            <h1 id="Plot">Plot.py</h1>
+            
+            <!--{ <p>This class provides methods for loading, organizing, and summarizing different types of data. It is designed for distributed computing without specialized libraries like Apache Hadoop or Apache Spark. </p>
+           <p>The idea is that you have the data distributed across nodes in a Kubernetes cluster and managed via longhorn. It uses network volume mounts such as Longhorn and bare metal Kubernetes. You label the machines and the data systematically and treat the locations all as irrelevant, for big data training part, rinse repeat procedure. It uses the term Node to denote that it is a node in a graph.</p>
+            <div class="admonition warning note">
+              <p class="admonition-title">Danger</p>
+              <p class="rubric">The Tree for Training requires the following:</p>
+              <ol class="arabic simple">
+                    <li>
+                      <p>
+                        <strong>Data Partitioning</strong>: Partitions graph data across nodes in a Kubernetes cluster.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Communication</strong>: Enables communication between nodes during BFS or DFS process.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Synchronization</strong>: Implements synchronization to ensure all nodes finish processing before moving to the next level or backtracking.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Fault Tolerance</strong>: Handles node failures using Kubernetes’ pod replication and service discovery.
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Load Balancing</strong>: Distributes workload evenly across nodes.
+                      </p>
+                    </li>
+                  </ol>
+            </div>
+
+<h4>Example usage of the GraphDBCluster</h4>
+<div class="highlight-python notranslate">
+                    <div class="highlight">
+                      <pre><span></span><span class="n"></span><span class="o"></span><span class="n"></span>db = Subgraph()
+db.load_data<span class="s2">('data.csv')</span>
+</pre>
+                    </div>
+                  </div>
+                  <p>If the last class was the manager, this class is the worker. This class logically parses the HTML elements at each step.</p>
+<p>Table 2: Logic() Methods</p>
+
+<div>
+    <div style="display: flex; width: 100%; background-color:#181818">
+        <p class="Child" >Method</p>
+        <p class="Child" >Description</p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; width: 100%;">
+            <p class="Child Coloring">Inchworm.gate()
+            </p>
+            <p style="width: 50%;">This method performs the logical parsing of the HTML elements at each step.
+            </p>
+         </div>
+        <div style="display: flex; width: 100%;">
+                    <p class="Child Coloring">TreeBranch.add()</p>
+                    <p style="width: 50%;">Inserts a new entry into the tree.</p>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">TreeBranch.add_child()</p>
+                      <p style="width: 50%;">Adds a child to the tree.</p>
+                      </div>
+                      <div style="display: flex; width: 100%;"><p class="Child Coloring">TreeBranch.add_children()</p>
+                        <p style="width: 50%;">Adds children to the tree.</p></div>
+                        <div style="display: flex; width: 100%;">
+                          <p class="Child Coloring">TreeBranch.is_leaf()</p>
+                          <p style="width: 50%;">Checks if the node is a leaf node.</p></div>
+                          <div style="display: flex; width: 100%;">
+                          <p class="Child Coloring">Inchworm.embed()</p>
+                          <p style="width: 50%;">This method embeds the data.</p></div>
+    </div>
+</div>
+<h2>OVERVIEW</h2>
+<h4>Table 1: GraphDB() Data Cluster Methods</h4>
+<div>
+    <div style="display: flex; width: 100%; background-color:#181818">
+        <p class="Child" >Method</p>
+        <p class="Child" >Description</p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; width: 100%;">
+            <p class="Child Coloring">GraphDB.create_nodule()
+            </p>
+            <p style="width: 50%;">Creates a new nodule (currently it is single machine tabular - confusingly graph - data)
+            </p>
+         </div>
+        <div style="display: flex; width: 100%;">
+                    <p class="Child Coloring">GraphDB.summarize()</p>
+                    <p style="width: 50%;">Synthesizes the graph.</p>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">GraphDB.synchronize()</p>
+                      <p style="width: 50%;">Synchronizes the graph.</p>
+                      </div>
+                     
+    </div>
+</div>
+<h4>Table 2. GraphDBSearch() Search Methods</h4>
+<div>
+    <div style="display: flex; width: 100%; background-color:#181818">
+        <p class="Child" >Method</p>
+        <p class="Child" >Description</p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; width: 100%;">
+            <p class="Child Coloring">GraphDBSearch.find_neighbors()
+            </p>
+            <p style="width: 50%;">find matches for query (embedding or metadata, exact or like)
+            </p>
+         </div>
+        <div style="display: flex; width: 100%;">
+                    <p class="Child Coloring">GraphDBSearch.connect()
+
+</p>
+                    <p style="width: 50%;">connect two nodes with edge (source and target nodes, edge properties)</p>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">GraphDBSearch.create_virtual_edge()</p>
+                      <p style="width: 50%;">create virtual edge (source and target nodes, edge properties)</p>
+                      </div>
+                      <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">GraphDBSearch.partition_data()</p>
+                      <p style="width: 50%;">Assigns each vertex to a node based on the modulus of the vertex number and the total number of nodes.
+
+</p>
+                      </div>
+                     
+    </div>
+</div>
+<h4>Table 3. VectorDBLet() Data Management Methods</h4>
+<div>
+    <div style="display: flex; width: 100%; background-color:#181818">
+        <p class="Child" >Method</p>
+        <p class="Child" >Description</p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; width: 100%;">
+            <p class="Child Coloring">VectorDBLet.check_data()
+            </p>
+            <p style="width: 50%;">Verifies the availability of the data on the local machine.
+            </p>
+         </div>
+        <div style="display: flex; width: 100%;">
+                    <p class="Child Coloring">VectorDBLet.check_exists()</p>
+                    <p style="width: 50%;">Determines if the node already exists in the database (checked by URL).</p>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">VectorDBLet.load_data()</p>
+                      <p style="width: 50%;">Imports data into the subgraph.</p>
+                      </div>
+                      <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">VectorDBLet.insert()</p>
+                      <p style="width: 50%;">Inserts new data (data and data type).</p>
+                      </div>
+                      <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">VectorDBLet.insert_near()</p>
+                      <p style="width: 50%;">Adds a new node near an existing node (data and node).</p>
+                      </div>
+                      <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">VectorDBLet.delete()</p>
+                      <p style="width: 50%;">Removes data (data and data type).</p>
+                      </div>
+                      <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">VectorDBLet.update()</p>
+                      <p style="width: 50%;">Modifies data (data, data type, and new data).</p>
+                      </div>
+                     
+    </div>
+</div>
+<h4>Table 4: TreeEnpoints() API Methods</h4>
+<div>
+    <div style="display: flex; width: 100%; background-color:#181818">
+        <p class="Child" >Method</p>
+        <p class="Child" >Description</p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; width: 100%;">
+            <p class="Child Coloring">TreeEndpoints.db_query()
+            </p>
+            <p style="width: 50%;">Endpoint for handling Mycelium database requests.
+            </p>
+         </div>
+        <div style="display: flex; width: 100%;">
+                    <p class="Child Coloring">TreeEndpoints.db_insert()</p>
+                    <p style="width: 50%;">Endpoint for handling Mycelium insert requests.</p>
+                    </div>
+                    <div style="display: flex; width: 100%;">
+                      <p class="Child Coloring">TreeEndpoints.db_update()</p>
+                      <p style="width: 50%;">Endpoint for scheduling database cleanup (e.g. data migration)</p>
+                      </div>
+                     
+</div>
+</div>
+<h2>REFERENCES</h2>} -->
+            <script src="./script.js"></script>
+
+
+          </article>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="md-footer">
+
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+
+
+
+        <a href="Cap.html" class="md-footer__link md-footer__link--next" aria-label="Next: 2. System Overview"
+          rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2. Cap.py
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z" />
+            </svg>
+          </div>
+        </a>
+
+      </nav>
+
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-copyright">
+
+
+            Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+              Material for MkDocs
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+    <div class="md-dialog__inner md-typeset"></div>
+  </div>
+  <script id="__config"
+    type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.footer", "content.code.copy", "navigation.expand"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": "0.0.67"}
+    </script>
+  <script src="assets/javascripts/bundle.748e2769.min.js"></script>
+</body>
+</html>

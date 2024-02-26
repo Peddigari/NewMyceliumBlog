@@ -1,0 +1,72 @@
+=====================
+ML Aps
+=====================
+
+This guide explains how to use the payload information for a machine learning task.
+
+Model Identification
+--------------------
+
+Use the `mid` field to identify the model that will be trained. This is a unique identifier for each model.
+
+API Endpoint
+------------
+
+The `url` field is the API endpoint where the model training or prediction request will be sent. This is where you send your POST request for training or prediction.
+
+Data Sources
+------------
+
+The `file_paths` field contains the paths to the CSV files that will be used for training or prediction. Make sure these files are accessible and have the correct format.
+
+Features and Target Variables
+-----------------------------
+
+The `x` and `y` fields describe the structure of the input and output data. Each key-value pair in `x` represents a feature, and in `y` represents a target variable. The type ("NUMBER" or "CATEGORY") indicates whether the variable is numerical or categorical.
+
+Payload Type
+------------
+
+The `type` field is used by the system to determine how to process the payload. In this case, "structure" means that the payload describes the structure of the data and the model.
+
+Example
+-------
+
+Here's an example of a payload using a dummy mixed mode data source:
+
+.. code-block:: json
+
+  {
+    "mid": "model123",
+    "url": "https://api.virtuousai.com/train",
+    "file_paths": [
+      "/path/to/dummy_data1.csv",
+      "/path/to/dummy_data2.csv"
+    ],
+    "x": {
+      "age": "NUMBER",
+      "job": "CATEGORY",
+      "marital_status": "CATEGORY",
+      "education": "CATEGORY",
+      "default": "CATEGORY",
+      "balance": "NUMBER",
+      "housing": "CATEGORY",
+      "loan": "CATEGORY",
+      "contact": "CATEGORY",
+      "day": "NUMBER",
+      "month": "CATEGORY",
+      "duration": "NUMBER",
+      "campaign": "NUMBER",
+      "pdays": "NUMBER",
+      "previous": "NUMBER",
+      "poutcome": "CATEGORY"
+    },
+    "y": {
+      "deposit": "CATEGORY"
+    },
+    "type": "structure"
+  }
+
+This payload would be used to train a model identified by `mid` on the data in the specified CSV files, using the API endpoint specified in the `url` field. The model would predict the `deposit` field based on the input features specified in the `x` field.
+
+Please note that this is a dummy example and the actual usage might depend on the specific application or library that uses this payload. Always refer to the relevant documentation for specific instructions.

@@ -1,0 +1,24 @@
+.. _Custom Apps Modules and Services:
+
+Custom Apps, Modules, & Services
+============================================
+
+Here's a step-by-step guide on how to create a custom app for Kubeflow Notebooks:
+
+Step 1: Create a Custom Image
+--------------------------------------------------------------------
+
+Create a custom image that meets the following requirements:
+
+- **Expose an HTTP interface**: The image should expose an HTTP interface on port 8888. You need to set the `NB_PREFIX` environment variable at runtime and include `Access-Control-Allow-Origin: *` in the HTTP response headers.
+  
+- **Run as a specific user**: The image should run as a user named `joyvan`, with a home directory at `/home/joyvan` and a UID of 1000.
+  
+- **Start with an empty PVC**: The image should be able to start successfully with an empty Persistent Volume Claim (PVC) mounted at `/home/joyvan`. Kubeflow mounts a PVC at this location to keep state across Pod restarts.
+
+Step 2: Install the Custom Image in a Kubeflow Notebook
+--------------------------------------------------------------------
+
+Once you've created the custom image, you can install it in a Kubeflow Notebook. Please note that any user-installed packages in a Kubeflow Notebook will only last for the pod’s lifetime.
+
+That's it! You've now created a custom app for Kubeflow Notebooks. Please remember to adjust these steps based on your specific use case and environment.

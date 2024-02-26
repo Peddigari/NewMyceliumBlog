@@ -1,0 +1,21 @@
+Statement of Purpose
+==========================================
+
+Mycelium serves as the central hub for our multimodal system, consolidating all code into a single library. It guarantees the functionality and accountability of our system by conducting comprehensive interface testing and resolving any code-related issues. Mycelium acts as the binding force that ensures the smooth and efficient operation of our system.
+
+.. danger::
+
+   .. rubric:: Model Requirements -
+   
+   1. **End-to-end**: All components are capable of training jointly online.
+   2. **Accurate**: Semantic logic is embedded in a hierarchical tree through backpropagation pruning.
+   3. **Transparent**: Information can be stored and retrieved in a way that is easily understandable, and backpropagation can be performed.
+
+.. rubric:: Mycelium is ...
+
+- **Code Gatekeeper**: It ensures that all code interfacing with our multimodal system adheres to the established standards.
+- **Source of Truth**: Developers can refer to this toolkit for the definitive coding standards and practices.
+- **Autonomy**: While maintaining standards, it allows developers the flexibility of their own workspace.
+- **Dispute Resolution**: It settles any code-related disputes, ensuring a harmonious development environment.
+- **Integration**: It performs rigorous interface testing to ensure the smooth integration of new code.
+- **Maintenance**: The toolkit is regularly updated and maintained to reflect the latest changes and improvements.

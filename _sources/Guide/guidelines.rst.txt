@@ -1,0 +1,36 @@
+.. _Rules and Procedure:
+
+
+Rules and Procedure
+=================================
+
+This guide aims to assist ML developers in efficiently and reliably navigating our shared resources. Before starting, let's establish some rules and procedures to maintain a consistent and predictable file structure for API calls.
+
+Understanding the structure and purpose of files in a project is crucial for several reasons:
+
+1. **Collaboration:** If you're working as part of a team, understanding the file structure helps you and your teammates navigate the project efficiently.
+2. **Scalability:** As the project grows, a well-structured file system can accommodate new features and components more easily.
+3. **Reproducibility:** Files like `requirements.txt` and `.env` help reproduce the development environment, which is crucial for consistent behavior across different setups.
+
+
+File System**
+----------------------------------------------
+   
+Each project should have the following file structure::
+
+   .
+   ├── .gitignore: This file specifies patterns of files or directories that Git should ignore, preventing unnecessary or sensitive files from being included in the version control system.
+   ├── .env: This file contains sensitive information such as credentials. It is excluded from version control using `.gitignore`.
+   ├── README.md: This file provides instructions on how to interact with the module.
+   ├── requirements.txt: This file lists all Python dependencies required by the application, ensuring that your environment can be reproduced successfully.
+   ├── app.py: This script wraps the module with a handler function, serving as the main entry point for the application.
+   ├── module
+   │   └── submodule
+   │       └── __init__.py
+   │           └── This file is used to initialize the Python module and make its features accessible to the rest of the application.
+   ├── tests
+   │   └── tests.py
+   │       └── This script contains tests for all use cases, abuse cases, and edge cases. It should be run before each deployment to ensure the application functions as expected.
+   ├── Dockerfile: This file contains instructions for building a Docker image. It is used to create a containerized version of the application.
+   ├── docker-compose.yml: This file contains instructions for running the application in a Docker container. It is used to create a containerized version of the application.
+   └── LICENSE: This file contains the license for the application. It is used to specify how others can use the code.

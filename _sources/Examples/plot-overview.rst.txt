@@ -1,0 +1,69 @@
+.. _Plotting:
+
+Plotting
+======================
+
+Choose the plots that meet your situation most accurately. These plots have proven to be the most effective for the following types of cases.
+
+Ranking
+-------
+
+Which item is the best/worst?
+
+.. list-table::
+   :header-rows: 1
+   :widths: 50 50
+
+   * - A. Horizontal Waterfall
+     - B. Dotplot 
+   * - .. image:: ../../assets/plot_horizontal_waterfall.png
+     - .. image:: ../../assets/plot_horizontal_dot.png
+   * - :func:`Plot.PlotClass.rank.horizontal_waterfall`
+     - :func:`Plot.PlotClass.rank.vertical_dot_plot`
+
+Deviation
+---------
+
+Plot A. is the choice to use for time series data. B is used for categorical data.
+
+.. list-table:: 
+   :header-rows: 1
+   :widths: 50 50
+   
+   * - A. Line Chart
+     - B. Vertical Waterfall 
+   * - .. image:: ../../assets/plot_baseline.png
+     - .. image:: ../../assets/plot_vertical_waterfall.png
+   * - :func:`Plot.PlotClass.deviation.baseline_lineplot`
+     - :func:`Plot.PlotClass.deviation.vertical_waterfall`
+
+Correlation
+-----------
+
+Don't use A unless you have to (e.g. categorical data because it's hard to read)
+
+.. list-table:: 
+  :header-rows: 1
+  :widths: 50 50
+
+  * - A. Heat Map 2
+    - B. Scatter Plot With Line
+  * - .. image:: ../../assets/plot_heatmap.png
+    - .. image:: ../../assets/plot_scatter.png
+  * - :func:`Plot.PlotClass.correlation.heatmap`
+    - :func:`Plot.PlotClass.correlation.scatter_plot`
+
+
+Timeseries
+-------------
+
+.. list-table:: 
+  :header-rows: 1
+  :widths: 50 50
+
+  * - Line Chart 
+    - Stack bar
+  * - .. image:: ../../assets/plot_baseline.png
+    - .. image:: ../../assets/plot_stack_bar.png
+  * - :func:`Plot.PlotClass.timeseries.line_plot`
+    - :func:`Plot.PlotClass.timeseries.stack_bar`

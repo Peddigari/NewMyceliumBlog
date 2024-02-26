@@ -1,0 +1,87 @@
+WELCOME TO MYCELIUM!
+===================================================
+
+Purpose
+--------------------------------------------
+
+Welcome to our internal machine learning repository, where we strive to **deliver products fast** by establishing **rules and procedures**! Our main goal is to accelerate the development and deployment of machine learning models, ensuring that you can focus on what matters most - creating impactful models.
+
+We’re excited to announce that we’ll be doing **CI-CD ModelOps workflows** on HPCs using Kubernetes. This platform provides end-to-end orchestration of machine learning workflows as well as provides a consistent and flexible way to **develop, deploy, and manage complex system** at scale.
+
+
+The Theme: Mushrooms
+--------------------------------------------
+To streamline our processes and ensure consistency across projects, we’ve developed a standardized module that we’ve affectionately named Mycelium. Just like the part of a mushroom it’s named after, our Mycelium framework forms an underlying network that connects all parts of our machine learning projects, providing structure and facilitating fast and efficient product delivery.
+
+.. image:: ../assets/stock-mycelium.png
+   :alt: mycelium
+
+In this framework, Hyphae represents our Natural Language Processing (NLP) capabilities. It’s the thread that weaves through the data, extracting meaningful insights and understanding from unstructured text. On the other hand, Mycelium represents the graph itself, a complex network of interconnected nodes and edges that captures relationships and interactions in our data.
+
+We’re thrilled to have you here and can’t wait to see what we’ll achieve together.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: INTRODUCTION
+   :numbered:
+   :hidden:
+
+   Guide/purpose.rst
+   Guide/guidelines.rst
+   Guide/chain-of-command.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: GUIDE
+   :numbered:
+   :hidden:
+
+   Guide/ci-cd.rst
+   Guide/kubeflow.rst
+   Guide/dashboard.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: EXAMPLES
+   :numbered:
+   :hidden:
+
+   Examples/notebooks.rst
+   Examples/katib.rst
+   Examples/tensorboards.rst
+   Examples/plot-overview.rst
+
+.. toctree:: 
+   :maxdepth: 3
+   :caption: REFERENCES
+   :hidden:
+
+   References/Mycelium.rst
+   test_cosine.ipynb
+   
+.. toctree::
+   :maxdepth: 3
+   :caption: database/
+   :hidden:
+
+   References/Mycelium/Inchworm.rst
+   References/Mycelium/Tree.rst
+   References/Mycelium/Branch.rst
+   References/Mycelium/Crawler.rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: models/
+   :hidden:
+
+   References/Mycelium/Hyphae.rst
+   References/Mycelium/LLAMA.rst
+   References/Mycelium/Psilocybin.rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: analytics/
+   :hidden:
+
+   References/Mycelium/Plot.rst
+   References/Mycelium/Cap.rst

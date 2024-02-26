@@ -1,0 +1,82 @@
+.. _Optimize Params:
+
+Optimize Parameters
+==========================================================================
+
+Kubeflow Katib Tutorial: Hyperparameter Tuning for Machine Learning Models
+------------------------------------------------------------------------------------------
+
+
+This tutorial will guide you through the process of using Katib, a Kubernetes-native project for automated machine learning (AutoML) that supports hyperparameter tuning, early stopping, and neural architecture search (NAS).
+
+Create an Experiment
+----------------------------------------------------------------------
+
+An experiment represents a single optimization run over a user-defined objective function. It's defined by a configuration file that specifies the parameters to be tuned, the objective metric, search algorithm, and other configurations.
+
+Here's an example of an experiment configuration file:
+
+.. code-block:: yaml
+
+   apiVersion: "kubeflow.org/v1beta1"
+   kind: Experiment
+   metadata:
+     namespace: kubeflow
+     name: quick-start
+   spec:
+     parallelTrialCount: 3
+     maxTrialCount: 12
+     maxFailedTrialCount: 3
+     objective:
+       type: maximize
+       goal: 0.99
+       objectiveMetricName: Validation-accuracy
+       additionalMetricNames:
+         - Train-accuracy
+     algorithm:
+       algorithmName: random
+     parameters:
+       - name: --lr
+         parameterType: double
+         feasibleSpace:
+           min: "0.01"
+           max: "0.03"
+       - name: --num-layers
+         parameterType: int
+         feasibleSpace:
+           min: "2"
+           max: "5"
+       - name: --optimizer
+         parameterType: categorical
+         feasibleSpace:
+           list:
+             - sgd
+             - adam
+             - ftrl
+
+Run the Experiment
+----------------------
+
+After defining the experiment configuration file, you can use `kubectl` to apply it:
+
+.. code-block:: bash
+
+   kubectl apply -f your-experiment.yaml
+
+Monitor the Experiment
+----------------------
+
+You can monitor the progress of your experiment using the Katib UI or via `kubectl`. The experiment will create several trials, and each trial will run a K8s Job with a training container and a metrics collector sidecar.
+
+Analyze the Results
+----------------------
+
+Once all trials are completed, you can analyze the results to identify the best hyperparameters for your model. The results are available in the Katib UI and can also be retrieved via `kubectl`.
+
+That's it! You've now used Katib for hyperparameter tuning. Please note that this is a basic tutorial and the exact steps may vary depending on your specific setup and requirements. Always ensure to follow best practices and guidelines when configuring your system.
+
+.. note:: 
+
+   1. **Experiment**: This single optimization run includes the objective, search space, and search algorithm. (e.g., early stopping) 
+   2. **Suggestion**: These are sets of hyperparameters produced by the user-selected search algorithm. Katib creates Trials to evaluate these suggestions.
+   3. **Trial**: This is one iteration of the hyperparameters tuning process. A Trial runs the worker job, which corresponds to the training job. (Since a Trial is an abstraction of the worker job, any Kubernetes resource can perform the training job, such as TFJob, MPIJob, or even a Tekton Pipeline).

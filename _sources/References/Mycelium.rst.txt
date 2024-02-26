@@ -1,0 +1,94 @@
+=================
+Mycelium.py
+=================
+
+Mycelium is the core Machine Learning class for our multimodal model and the protector of our codebase. It's a blend of an abstract database and network, integrating various components smoothly. This toolkit sets the standard for developers, while allowing workspace flexibility.
+
+.. rubric: data
+
+   This section contains classes that handle data scraping, conversion, loading, organization, and summarization.
+
+   - :ref:`Crawler`: The Common Class. This class contains methods for loading, organizing, and the Common Crawl dataset. 
+
+   - :ref:`Tree`: The Data Class. This class contains methods for loading, organizing, and summarizing different types of data. It can handle tabular data, graph data, and other complex data structures. It provides functionality for cleaning and preprocessing the data, as well as converting the data into formats suitable for machine learning algorithms.
+
+   - :ref:`Branch`: The classes nodules.
+      
+   - :ref:`Inchworm`: The Crawling Class. This class contains functions that scrape data from webpages and convert data between different formats (HTML and JSON). It can retrieve HTML content from a given URL, parse the HTML to extract useful information such as images and metadata, and convert the HTML into a JSON-compatible format for easier processing and analysis.
+
+
+.. rubric: model
+
+   This section includes classes that define our machine learning models.
+
+   - :ref:`Psilocybin`: This is a machine learning model for image generation, encoding, and decoding using U-Net (a type of Convolutional Neural Networks, CNNs). It uses automatic hierarchical feature recognition to identify and extract features from images. The model is robust to variations in images, such as changes in size, rotation, or illumination, enhancing its performance and versatility in diverse real-world scenarios.
+
+   - :ref:`Hyphae`: This is a large-scale, Transformer-based model pre-trained on multilingual data. It generates contextual word representations and is capable of transfer learning for various NLP tasks including machine translation, sentiment analysis, and more. The model can handle multiple languages and diverse text formats, making it highly versatile for a wide range of NLP tasks.
+
+
+.. rubric: analytics
+
+   This section is dedicated to the class that helps in visualizing the data or the results of the machine learning models.
+
+   - :ref:`Plot`: This class is used for creating visualizations of the data or the results of the machine learning models. It provides methods for creating a variety of plots and charts, such as bar charts, line graphs, scatter plots, and more. These visualizations can help in understanding the data and the performance of the models, as well as in presenting the results in a clear and understandable manner.
+
+   - :ref:`Cap`: The Governance/Labeling Interface.
+
+
+
+This hybrid neural network and graphDB object handler class is custom suited to meet our needs for high-performance computing (HPC) systems, where the neural network and the hardware network are tightly integrated. 
+In this way, it is not strictly a Graph class or a machine learning class, but rather a glue that holds it all together.
+
+.. note::
+
+	1. the modules and data are dynamic, meaning that they are part of a journey and you need to have a story (which includes data resolution across training). 
+	2. And model versions are static, meaning that you can only have one version of a model at a time.
+
+
+.. image:: ../../assets/diagram-mycelium.png
+
+The data is parse externally from a different function and stored in the graphDB. This function then performs training across these nodes using various traveral schemes and data resolution techniques (e.g. chunking, batching, with DFS, BFS, etc.).
+
+
+OVERVIEW
+----------------------------------
+
+
+**Table 1.** :func:`Mycelium.TheGods` is a class that represents a hybrid neural network and graphDB object handler.
+
+	.. list-table:: 
+		:header-rows: 1
+
+		* - Method
+		  - Description
+		* - :func:`Mycelium.TheGods.run_tree_traversal`
+		  - Spanwn tree crawlers to parse data.
+		* - :func:`Mycelium.TheGods.fit`
+		  - Trains the model.
+		* - :func:`Mycelium.TheGods.predict`
+		  - Predicts the output for the given input.
+		* - :func:`Mycelium.TheGods.save`
+		  - Saves the model to the graphDB.
+		* - :func:`Mycelium.TheGods.load`
+		  - Loads the model from the graphDB.
+		* - :func:`Mycelium.TheGods.schedule`
+		  - Schedules the training session of the model.
+
+	
+**Table 3:** :func:`MyEndpoints` is a functional API for the Mycelium class.
+
+	.. list-table::
+		:header-rows: 1
+
+		* - Method
+		  - Description
+		* - :func:`Mycelium.call_mycelium`
+		  - Endpoint for handling Mycelium scheduling all sorts of requests.
+
+REFERENCES
+----------------------------------------------
+
+
+
+.. automodule:: Mycelium
+   :members:

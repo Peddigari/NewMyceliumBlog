@@ -1,0 +1,112 @@
+=====================
+Flask Application Guide
+=====================
+
+This guide explains how to use the `app.py` file and Docker for a Flask application.
+
+File
+----
+
+The main application file is `app.py`. This is where the main logic of your application resides.
+
+Input
+-----
+
+The application takes two parameters as input: `params` and an empty string. The `params` parameter is used to pass any necessary parameters to your application. The empty string is required due to certain rules.
+
+Output
+------
+
+The output of the application is a JSON object with the following fields:
+- `error`: This field contains an error message in plain English that can be displayed to the end user.
+- `traceback`: This field contains a traceback error message in string format. This is necessary because REST APIs cannot handle Python objects.
+- `data`: This field contains the successful response from the application.
+- `success_code`: This field contains a success code indicating that the operation was successful.
+
+Environment Variables
+---------------------
+
+Any keys or sensitive information should be stored in a `.env` file. This file should be added to your `.gitignore` file to prevent it from being committed to your Git repository. You can use libraries like `python-dotenv` to easily load these variables into your application.
+
+Docker
+------
+
+To containerize your application, you should include a Dockerfile in your project. Here's a basic example of a Dockerfile for a Flask application:
+
+.. code-block:: dockerfile
+
+  # Use an official Python runtime as a parent image
+  FROM python:3.7-slim
+
+  # Set the working directory in the container to /app
+  WORKDIR /app
+
+  # Add the current directory contents into the container at /app
+  ADD . /app
+
+  # Install any needed packages specified in requirements.txt
+  RUN pip install --no-cache-dir -r requirements.txt
+
+  # Make port 80 available to the world outside this container
+  EXPOSE 80
+
+  # Run app.py when the container launches
+  CMD ["python", "app.py"]
+
+This Dockerfile starts with a Python 3.7 base image, sets the working directory to /app, adds the current directory to /app in the container, installs the Python dependencies, exposes port 80, and finally runs `app.py` when the container is launched.
+
+To build the Docker image, run the following command in your terminal:
+
+.. code-block:: bash
+
+  docker build -t your-image-name .
+
+To run the Docker container, use the following command:
+
+.. code-block:: bash
+
+  docker run -p 4000:80 your-image-name
+
+Remember to replace `your-image-name` with the name you want to give to your Docker image.
+
+Please note that this is a basic guide and might not cover all aspects of your specific use case. Always ensure to follow best practices for data handling, error handling, and Docker usage. Happy coding! 😊
+
+
+```python
+from flask import Flask, request, jsonify
+from dotenv import load_dotenv
+import os
+import traceback
+
+# Load environment variables
+load_dotenv()
+
+app = Flask(__name__)
+
+@app.route('/api', methods=['POST'])
+def api():
+    try:
+        # Get parameters from request
+        params = request.json.get('params', '')
+        empty_string = request.json.get('empty_string', '')
+
+        # Your application logic here
+        data = "Your successful response"
+
+        return jsonify({
+            'data': data,
+            'success_code': 200
+        }), 200
+    except Exception as e:
+        return jsonify({
+            'error': str(e),
+            'traceback': traceback.format_exc()
+        }), 500
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=os.getenv('PORT', 5000))
+```
+
+This is a simple Flask application that exposes a single API endpoint. When a POST request is made to this endpoint, the application attempts to execute some logic (replace `"Your successful response"` with your actual logic). If the operation is successful, it returns a JSON object with the successful response and a success code. If an error occurs, it catches the exception and returns a JSON object with the error message and the traceback.
+
+Please note that this is a basic guide and might not cover all aspects of your specific use case. Always ensure to follow best practices for data handling and error handling. Happy coding! 😊

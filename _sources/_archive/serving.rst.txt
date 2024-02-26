@@ -1,0 +1,76 @@
+
+Serving a Machine Learning Model
+=================================================
+
+This tutorial will guide you through the process of using Tekton, a Kubernetes-native framework for creating continuous integration and delivery (CI/CD) systems, to serve a machine learning model.
+
+Install Tekton
+--------------
+
+First, you need to set up and configure Tekton on your Kubernetes cluster. If you have already installed Kubeflow, your Kubeflow deployment includes Tekton. If you want to install Tekton separately from Kubeflow, or to get a later version of Tekton, you can use one of the following Tekton installs.
+
+Create a Task
+-------------
+
+A **Task** in Tekton is a collection of sequential steps that you want to execute. Each step in your task is run in its own container in a pod on your Kubernetes cluster. You can define a task that builds and serves your machine learning model.
+
+Here's an example of how to define a task:
+
+.. code-block:: yaml
+
+   apiVersion: tekton.dev/v1beta1
+   kind: Task
+   metadata:
+     name: serve-model
+   spec:
+     steps:
+       - name: build-model
+         image: python:3.7
+         script: |
+           pip install scikit-learn pandas
+           python -c "from sklearn.datasets import load_iris; from sklearn.model_selection import train_test_split; from sklearn.ensemble import RandomForestClassifier; import pandas as pd; iris = load_iris(); iris_df = pd.DataFrame(data=iris.data, columns=iris.feature_names); iris_df['target'] = iris.target; X_train, X_test, y_train, y_test = train_test_split(iris_df[iris.feature_names], iris_df['target'], random_state=0); clf = RandomForestClassifier(random_state=0); clf.fit(X_train, y_train); print('Model Training Done')"
+       - name: serve-model
+         image: python:3.7
+         script: |
+           pip install flask scikit-learn pandas
+           python -c "from flask import Flask; app = Flask(__name__); @app.route('/'); def hello_world(): return 'Hello, World!'; if __name__ == '__main__': app.run(host='0.0.0.0', port=8080)"
+
+This task first trains a simple Random Forest model using the Iris dataset and then serves it using Flask.
+
+Create and Run a Pipeline
+-------------------------
+
+A **Pipeline** in Tekton defines an ordered series of tasks that you want to execute. You can create a pipeline that runs your `serve-model` task.
+
+Here's an example of how to define a pipeline:
+
+.. code-block:: yaml
+
+   apiVersion: tekton.dev/v1beta1
+   kind: Pipeline
+   metadata:
+     name: train-and-serve-pipeline
+   spec:
+     tasks:
+       - name: train-and-serve
+         taskRef:
+           name: serve-model
+
+You can start a pipeline run to execute your pipeline:
+
+.. code-block:: bash
+
+   tkn pipeline start train-and-serve-pipeline
+
+Access the Served Model
+-----------------------
+
+Once your pipeline run is complete, your model is being served in a Flask app. You can access it by forwarding the port from the serving pod to your local machine:
+
+.. code-block:: bash
+
+   kubectl port-forward svc/serve-model 8080:80
+
+Now you can access your served model at `localhost:8080`.
+
+That's it! You've now used Tekton for serving a machine learning model.

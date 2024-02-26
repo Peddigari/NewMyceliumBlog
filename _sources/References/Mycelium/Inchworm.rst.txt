@@ -1,0 +1,52 @@
+.. _Inchworm:
+
+=======================
+Inchworm.py
+=======================
+
+This class (Inchworm) and its helpers are used to logically parse (Inchworm) HTML trees. It stores urls, html, and metadata in a graphDB (Tree) and more specifically
+across nodes (TreeBranch) and stores the embeddings in a vectorDB (VectorDBLet).
+
+.. image:: ../../../assets/diagram-graphdb.png
+
+.. danger::
+      
+   Rules:
+
+   1. crawling data is store in a graphDB by graph instance
+   2. embedding data is stored in graphDB by model instance
+   3. every transaction is either logged or flagged (e.g. embed-v1: [0.1, 0.2, 0.3, 0.4, 0.5])
+
+OVERVIEW
+===============================
+
+First, we have Inchworm with is the main class which is the main class that is called whenever you want to parse single webpages.
+
+* - :func:`Inchworm.Inchworm.parse_embed_n_store_page`
+  - This method is responsible for parsing HTML content and optionally storing the individual embedded chunks in a graph database.
+
+
+**Table 1:** :func:`Inchworm` Methods
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Method
+        - Description
+      * - :func:`Inchworm.Inchworm.parse_embed_n_store_page`
+        - This method is responsible for parsing HTML content and optionally storing the individual embedded chunks in a graph database.
+      * - :func:`Inchworm.Inchworm.gate`
+        - This method logically parses HTML elements of pages and optionally embeds the data into a suitable data structure.
+      * - :func:`Inchworm.TreeBranch.is_leaf`
+        - This method checks if a node in the tree is a leaf node (i.e., it has no children).
+      * - :func:`Inchworm.Inchworm.embed`
+        - This method is responsible for embedding the data into a suitable data structure.
+      * - :func:`Inchworm.Inchworm.save_tree_to_csv`
+        - This method saves the tree structure into a CSV file for further processing or analysis.     
+         
+REFERENCES
+===============================
+
+
+.. automodule:: Inchworm
+   :members:

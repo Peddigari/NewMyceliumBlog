@@ -1,0 +1,8 @@
+.. _Plot:
+
+Plot.py
+===================
+
+.. automodule:: Plot
+   :members:
+   :exclude-members: set_graph_dark, insertion_sort

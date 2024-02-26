@@ -1,0 +1,58 @@
+.. _Getting Started:
+
+Getting Started with Kubeflow
+=============================
+
+What is Kubeflow? Kubeflow is an machine learning operations **MLOPS** framework designed for data scientists. Kubeflow manages data science pipelines, including data *exploration* *notebooks*, model training, *serving*, metadata tracking, and other workflows. It's an ideal tool for experimenting with ML pipelines and deploying ML systems to various environments for development, testing, and production-level serving.
+
+Why Kubeflow? Kubeflow's primary focus is on making the best libraries modular, scalable, and reliable. It allows customization at each stage of the "Kubeflow workflow," which includes: **model prep, training, serving, and monitoring**, see below. Whether you're just starting out with Kubernetes or you're a seasoned user, Kubeflow can help streamline your ML workloads locally, on-premises, or in a cloud environment.
+
+Data Pipelines in Kubeflow
+--------------------------------
+
+Developing and deploying a machine learning (ML) pipeline is an iterative process, involving several stages. This process requires cyclical adjustments and evaluations throughout its development. Pipelines manage these iterative process, using conceptual workflows.
+
+.. image:: ../../assets/diagram_ml-ops.png
+  :width: 50%
+  :align: center
+
+
+The Kubeflow "Workflow"
+--------------------------------
+
+In Kubernetes, a Pod represents a set of running containers on your cluster. (Often the relationship is 1 pod to 1 container). These pods have a defined “lifecycle.” For example, a pod is running in your cluster, then a critical fault occurs on the node where the pod is running, means all the pods on that node fail.
+
+ML Workflow “Phases”
+--------------------------------
+
+However, to make life considerably easier, you don't need to manage each Pod directly. Instead, you use kubernetes workload resources or resource controllers. There is a two phase process: *the experimental phase* wherein the model is discovered, and *the production phase* wherein the model is deployed and monitored.
+
+.. list-table:: PHASE I - EXPERIMENTAL PHASE
+   :widths: 50 50
+   :header-rows: 1
+   
+   * - Description
+     - Images
+   * - In the experimental phase, the data and model are selected. The model is developed, tested, and updated iteratively based on initial assumptions to achieve the desired results. This involves: 
+
+       1. **Data analytics:** Collecting and analyzing the necessary data to train the ML model using statistics, baseline models, or other analytics tools.
+
+       2. **Selecting & Coding** (TF, PyTorch, scikit-learn, or XGBoost) the initial model version (Jupyter Notebook & Pipelines)
+
+       3. **Tuning the model’s hyper-parameters** for efficient processing and accurate results (Katib)
+
+     - .. image:: ../../assets/phase_experimental.png
+
+.. list-table:: PHASE II - PRODUCTION PHASE
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Description
+     - Images
+   * - In the production phase, a system is deployed and continuously infers and monitors. The phases should contain steps that look like the following:
+
+       1. **Serving the model** for online prediction or batch mode running. (TF Serving)
+
+       2. **Monitoring the model’s performance** and incorporating the results into the tuning or retraining processes of the model.
+       
+     - .. image:: ../../assets/phase_prod.png

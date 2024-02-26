@@ -1,0 +1,43 @@
+.. _Hyphae:
+
+Hyphae.py
+=======================
+
+A class of large-scale, Transformer-based model pre-trained on multilingual data, generating contextual word representations, capable of transfer learning for various NLP tasks including machine translation, sentiment analysis, and more.
+
+.. image:: ../../../assets/diagram-hyphae.png
+
+
+OVERVIEW
+----------------------------------
+
+**Table 1:** :func:`Hyphae` This method traverses the tree using our proprietary algorithm. :ref:`TreeParser`
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - :func:`Embed_html_tags`
+      - Generates embeddings for HTML tags by considering their position in the hierarchy. :ref:`Embed_html_tags`
+
+**Table 2.:** :func:`PosEmbeds` The Embeddings class wraps a list of embeddings used to encode different types of positional information for HTML tags. :ref: `PosEmbeds <tree-position-embeddings>`
+
+.. list-table::
+    :header-rows: 1
+
+    * - Method
+      - Description
+    * - :func: `PosEmbeds.build_train_data`
+      - Needs to support hyperopt payloads too. So we should format it as such. :ref:`build_train_data`
+    * - :func: `PosEmbeds.get_params`
+      - N_EPOCHS = config.get("N_EPOCHS"); return {"N_EPOCHS": N_EPOCHS if N_EPOCHS else "","lr": lr if lr else "",...} :ref: `get_params`
+    * - :func: `PosEmbeds.train`
+      - for Katis/Kubeflow :ref:`train <train>`
+
+REFERENCES
+----------------------------------------------
+  
+
+.. automodule:: Hyphae
+   :members:

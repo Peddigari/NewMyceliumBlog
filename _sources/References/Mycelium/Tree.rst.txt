@@ -1,0 +1,135 @@
+.. _Tree:
+
+Tree.py
+=======================
+
+This class provides methods for loading, organizing, and summarizing different types of data. 
+It is designed for distributed computing without specialized libraries like Apache Hadoop or Apache Spark. 
+
+The idea is that you have the data distributed across nodes in a Kubernetes cluster and managed via longhorn.
+It uses network volume mounts such as Longhorn and bare metal Kubernetes.
+You label the machines and the data systematically and treat the locations all as irrelevant, for big data training part, rinse repeat procedure.
+It uses the term Node to denote that it is a node in a graph.
+
+.. danger:: The Tree for Training requires the following:
+
+   1. Data Partitioning: Partitions graph data across nodes in a Kubernetes cluster.
+   2. Communication: Enables communication between nodes during BFS or DFS process.
+   3. Synchronization: Implements synchronization to ensure all nodes finish processing before moving to the next level or backtracking.
+   4. Fault Tolerance: Handles node failures using Kubernetes' pod replication and service discovery.
+   5. Load Balancing: Distributes workload evenly across nodes.
+
+.. code-block:: python
+      :caption: Example usage of the GraphDBCluster
+      :name: ex-graphdbclass
+      :class: viewcode-block
+
+      db = Subgraph()
+      db.load_data('data.csv')
+
+
+
+If the last class was the manager, this class is the worker. This class logically parses the HTML elements at each step.
+
+**Table 2:** :func:`Logic` Methods
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Method
+        - Description
+      * - :func:`Inchworm.gate`
+        - This method performs the logical parsing of the HTML elements at each step.
+      * - :func:`TreeBranch.add`
+        - Inserts a new entry into the trie.
+      * - :func:`TreeBranch.add_child`
+        - Adds a child to the tree.
+      * - :func:`TreeBranch.add_children`  
+        - Adds children to the tree.
+      * - :func:`TreeBranch.is_leaf`
+        - Checks if the node is a leaf node.
+      * - :func:`Inchworm.embed`
+        - This method embeds the data.
+         
+         
+         
+
+OVERVIEW
+----------------------------------
+
+**Table 1:** :func:`GraphDB` Data Cluster Methods
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Method
+        - Description
+      * - :func:`GraphDB.create_nodule`
+        - Creates a new nodule (currently it is single machine tabular - confusingly graph -  data)
+      * - :func:`GraphDB.summarize`
+        - Synthesizes the graph.
+      * - :func:`GraphDB.synchronize`
+        - Synchronizes the graph.
+   
+         
+**Table 2.** :func:`GraphDBSearch` Search Methods
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Method
+        - Description
+      * - :func:`GraphDBSearch.find_neighbors`
+        - find matches for query (embedding or metadata, exact or like)
+      * - :func:`GraphDBSearch.connect`
+        - connect two nodes with edge (source and target nodes, edge properties)
+      * - :func:`GraphDBSearch.create_virtual_edge`
+        - create virtual edge (source and target nodes, edge properties)
+      * - :func:`GraphDBSearch.partition_data`
+        - Assigns each vertex to a node based on the modulus of the vertex number and the total number of nodes.
+
+         
+**Table 3.** :func:`VectorDBLet` Data Management Methods
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 20 80
+
+      * - Method
+        - Description
+      * - :func:`VectorDBLet.check_data`
+        - Verifies the availability of the data on the local machine.
+      * - :func:`VectorDBLet.check_exists`
+        - Determines if the node already exists in the database (checked by URL).
+      * - :func:`VectorDBLet.load_data`
+        - Imports data into the subgraph.
+      * - :func:`VectorDBLet.insert`
+        - Inserts new data (data and data type).
+      * - :func:`VectorDBLet.insert_near`
+        - Adds a new node near an existing node (data and node).
+      * - :func:`VectorDBLet.delete`
+        - Removes data (data and data type).
+      * - :func:`VectorDBLet.update`
+        - Modifies data (data, data type, and new data).
+   
+**Table 4:** :func:`TreeEnpoints` API Methods
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Method
+        - Description
+      * - :func:`TreeEndpoints.db_query`
+        - Endpoint for handling Mycelium database requests.
+      * - :func:`TreeEndpoints.db_insert`
+        - Endpoint for handling Mycelium insert requests.
+      * - :func:`TreeEndpoints.db_update`
+        - Endpoint for scheduling database cleanup (e.g. data migration)
+
+         
+REFERENCES
+----------------------------------
+
+.. automodule:: Tree
+   :members:
+   

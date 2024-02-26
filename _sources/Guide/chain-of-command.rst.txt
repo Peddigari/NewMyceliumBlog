@@ -1,0 +1,42 @@
+.. _Chain of Command:
+
+Chain of Command
+=================================
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 20 40
+
+   * - Person/Organization
+     - Responsibility
+     - Role
+   * - **Falkor**
+     - :ref:`References/Mycelium/Tree.py<Tree>`
+     - Providing the database that gives the necessary specifications
+   * - .
+     - :ref:`References/Mycelium/Branch.py<Branch>`
+     - Providing the database that gives the necessary specifications
+   * - **Erik**
+     - :ref:`References/Mycelium/Crawler.py system<Crawler>`
+     - Performing code reviews and ensuring the GraphDB gets built
+   * - **Alex**
+        .. image:: ../../assets/team_alex.png
+           :width: 100 px
+     - :ref:`References/Mycelium/Psilocybin<Psilocybin>`
+     - Implementing using pretrained open-source models
+   * - **Alan**
+        .. image:: ../../assets/team_alan.png
+           :width: 100 px
+     - :ref:`References/Mycelium/Mycelium<mycelium>`
+     - Building the graph data passing API to work with the DB
+   * - **Doruk**
+        .. image:: ../../assets/team_dhoruk.png
+           :width: 100 px
+     - :ref:`References/Mycelium/Inchworm.py<Inchworm>`
+     - Focusing on the input and output of models to conform to requirements
+   * - .
+     - :ref:`References/Mycelium/Hyphae.py<Hyphae>`
+     - Focusing on the input and output of models to conform to requirements
+   * - .
+     - :ref:`References/Mycelium/LLAMA.py<LLAMA>`
+     - Focusing on the input and output of models to conform to requirements
