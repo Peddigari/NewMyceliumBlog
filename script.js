@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var key = "/C:/Users/praje/OneDrive/Desktop/task/mycelium/mycelium/.__palette";
+  var key = "/NewMyceliumBlog/.__palette";
 var value = localStorage.getItem(key);
 var jsonString = value; // Example JSON string
 var jsonObject = JSON.parse(jsonString);
