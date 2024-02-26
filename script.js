@@ -1,3 +1,24 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var key = "/C:/Users/praje/OneDrive/Desktop/task/mycelium/mycelium/.__palette";
+var value = localStorage.getItem(key);
+var jsonString = value; // Example JSON string
+var jsonObject = JSON.parse(jsonString);
+
+console.log(jsonObject.index);
+if ( jsonObject.index == 0) {
+  toggleClasses2()
+    console.log("Value found in localStorage:", value);
+    
+
+} else {
+  toggleClasses1()
+    console.log("Value not found in localStorage.");
+}
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   console.log('DOMContentLoaded')
 
@@ -155,4 +176,41 @@ document.addEventListener('DOMContentLoaded', function () {
 // searchInput.addEventListener('blur', () => {
 //   searchIcon.style.opacity = '1';
 // });
+
+function toggleClasses1() {
+  var element1 = document.getElementById('first');
+  var element2 = document.getElementById('second');
+  // if (element.classList.contains('first')) {
+  //     // element.classList.remove('first');
+  //     // element.classList.add('second');
+      element1.style.display="block";
+      element2.style.display="none";
+
+  // } else {
+  //     element.classList.remove('second');
+  //     element.classList.add('first');
+  // }
+
+}
+
+function toggleClasses2() {
+  var element1 = document.getElementById('first');
+  var element2 = document.getElementById('second');
+  // if (element.classList.contains('second')) {
+  //     element.classList.remove('second');
+  //     element.classList.add('first');
+  // } else {
+  //     element.classList.remove('first');
+  //     element.classList.add('second');
+  // }
+
+  element1.style.display="none";
+  element2.style.display="block";
+
+}
+
+window.onload = function() {
+  
+
+}
 

@@ -127,6 +127,12 @@ h4 {
             transition: width 0.3s ease; /*Transition for width change */
         }
 
+        .day-container:focus {
+            background-color: #04111b;
+            width: 688px; /* Increased width on focus */
+            display: block;
+          } 
+
         /* .searchingbox:focus + .searchIconClass {
             opacity: 0; /* Hide the icon when search bar is focused */
         /* */ */
@@ -156,6 +162,8 @@ h4 {
             padding: 10px;
             width: 200px;
         } */
+       
+        
 
 .highlight pre{
     display:block;
