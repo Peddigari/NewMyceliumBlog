@@ -1,21 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var key = "/NewMyceliumBlog/.__palette";
-var value = localStorage.getItem(key);
-var jsonString = value; // Example JSON string
-var jsonObject = JSON.parse(jsonString);
+// document.addEventListener('DOMContentLoaded', function() {
+//   var key = "/NewMyceliumBlog/.__palette";
+// var value = localStorage.getItem(key);
+// var jsonString = value; // Example JSON string
+// var jsonObject = JSON.parse(jsonString);
 
-console.log(jsonObject.index);
-if ( jsonObject.index == 0) {
-  toggleClasses2()
-    console.log("Value found in localStorage:", value);
+// console.log(jsonObject.index);
+// if ( jsonObject.index == 0) {
+//   toggleClasses2()
+//     console.log("Value found in localStorage:", value);
     
 
-} else {
-  toggleClasses1()
-    console.log("Value not found in localStorage.");
-}
-});
+// } else {
+//   toggleClasses1()
+//     console.log("Value not found in localStorage.");
+// }
+// });
 
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOMContentLoaded')
+
+  var element1 = document.getElementById('first');
+  var element2 = document.getElementById('second');
+  element1.style.display="none";
+  element2.style.display="block";
+})
 
 
 
@@ -209,8 +217,5 @@ function toggleClasses2() {
 
 }
 
-window.onload = function() {
-  
 
-}
 

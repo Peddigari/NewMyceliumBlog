@@ -40,6 +40,7 @@ p {
     margin-top: 8px;
     text-align: justify;
     font-family: "Poppins", sans-serif;
+    /* color: #fff; */
 }
 
 hr {
@@ -120,7 +121,7 @@ h4 {
     border-radius: 4px;
             padding-left: 34px; 
             background: #ededed;
-            color:#F4F4F4;
+            color:#091f30;
             font-size: 0.8rem;
              width: 200px;
             height:36px; /* Initial width */
@@ -128,7 +129,7 @@ h4 {
         }
 
         .day-container:focus {
-            background-color: #04111b;
+            background-color: #fff;
             width: 688px; /* Increased width on focus */
             display: block;
           } 
@@ -178,7 +179,11 @@ h4 {
     line-height: 1.4;
     
 }
-
+.highlight{
+    overflow: auto;
+    line-height: 1.4rem;
+    font-size: 85%;
+}
 .md-footer-copyright{
     margin:0 .6rem;
     padding:.4rem 0;

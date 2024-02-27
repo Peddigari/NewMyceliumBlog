@@ -4432,7 +4432,7 @@ html .md-typeset :is(.admonition-title, summary):last-child {
 
 .md-typeset :-webkit-any(.admonition-title, summary):before {
     background-color: #448aff;
-    content: "&#E3C9";
+    content: "";
     height: 1rem;
     -webkit-mask-image: var(--md-admonition-icon--note);
     mask-image: var(--md-admonition-icon--note);
@@ -4483,7 +4483,7 @@ html .md-typeset :is(.admonition-title, summary):last-child {
 
 .md-typeset :is(.admonition-title, summary):before {
     background-color: #448aff;
-    content: "&#E3C9";
+    content: "";
     height: 1rem;
     -webkit-mask-image: var(--md-admonition-icon--note);
     mask-image: var(--md-admonition-icon--note);
@@ -4845,7 +4845,7 @@ html .md-typeset :is(.admonition-title, summary):last-child {
 
 .md-typeset :is(.warning, .caution, .attention)>:is(.admonition-title, summary):before {
     background-color: #ff1744;
-    content: "&#E3C9";
+    content: "";
     -webkit-mask-image: var(--md-admonition-icon--warning);
     mask-image: var(--md-admonition-icon--warning);
     -webkit-mask-repeat: no-repeat;
