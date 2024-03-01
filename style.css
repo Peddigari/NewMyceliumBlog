@@ -65,12 +65,13 @@ h4 {
     color: #F4F4F4;
 }
 .Child{
-    /* display: flex; */
+    display: flex;
     flex: 1;
+   
 
 }
 .Coloring{
-    font-size: 85%;
+    font-size: 0.72rem;
     color: #37474f;
 }
 .md-typeset {
